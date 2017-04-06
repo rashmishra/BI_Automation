@@ -1,0 +1,69 @@
+10
+Oct
+unallocated
+10
+Waiting on bqjob_r1f35941a4cd5290e_000001580a3b21fb_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r1f35941a4cd5290e_000001580a3b21fb_1 ... (0s) Current status: DONE   Oct
+Ajay_Singh
+10
+Waiting on bqjob_r6c3e5b9a4a9cab81_000001580a3b355c_1 ... (0s) Current status: DONE   Oct
+Karthick_Sunderasan
+10
+Waiting on bqjob_r761b36a97531ade3_000001580a3b4163_1 ... (0s) Current status: DONE   Oct
+Rutvij_Oza
+10
+Waiting on bqjob_r16017a33bbc13cbe_000001580a3b4d83_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r16017a33bbc13cbe_000001580a3b4d83_1 ... (0s) Current status: DONE   Oct
+Jaideep_Banerjee
+10
+Waiting on bqjob_r42aaa1fe5035061e_000001580a3b7774_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r42aaa1fe5035061e_000001580a3b7774_1 ... (0s) Current status: DONE   Oct
+Nitin_Jain
+10
+Waiting on bqjob_r29b8abebacafc071_000001580a3b880d_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r29b8abebacafc071_000001580a3b880d_1 ... (0s) Current status: DONE   Oct
+Fawad_Haider
+10
+Waiting on bqjob_r653479838df86d35_000001580a3b9943_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r653479838df86d35_000001580a3b9943_1 ... (0s) Current status: DONE   Oct
+Saumya_Kumar
+10
+Waiting on bqjob_r2e00906c323e8792_000001580a3baaf5_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r2e00906c323e8792_000001580a3baaf5_1 ... (0s) Current status: DONE   Oct
+Saurabh_Malhotra
+10
+Waiting on bqjob_r70de9b5adaf5eba2_000001580a3bbbb3_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r70de9b5adaf5eba2_000001580a3bbbb3_1 ... (0s) Current status: DONE   Oct
+Nikita_Karira
+10
+Waiting on bqjob_r55ae6a4f535c972f_000001580a3bcd04_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r55ae6a4f535c972f_000001580a3bcd04_1 ... (0s) Current status: DONE   Oct
+Ajay_Singh_Chandigarh
+10
+Waiting on bqjob_r4aed539cc08c8cad_000001580a3bddf5_1 ... (0s) Current status: DONE   Oct
+Prakhar_Gupta
+10
+Waiting on bqjob_r1ac97f609f1dcda9_000001580a3be601_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r1ac97f609f1dcda9_000001580a3be601_1 ... (0s) Current status: DONE   Oct
+Jasdeep_Rajpal
+10
+Waiting on bqjob_r51c9f129eaff3e66_000001580a3bf6d1_1 ... (0s) Current status: DONE   Oct
+Paily_Chiranjeevi
+10
+Waiting on bqjob_r76d2ad053aec1616_000001580a3c02a9_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r76d2ad053aec1616_000001580a3c02a9_1 ... (0s) Current status: DONE   Oct
+Abhishek_Bose
+10
+Waiting on bqjob_r5ed70b642228b423_000001580a3c13a1_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r5ed70b642228b423_000001580a3c13a1_1 ... (0s) Current status: DONE   Oct
+New_Cities
+10
+Waiting on bqjob_r7a92061db54d880f_000001580a3c24fe_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r7a92061db54d880f_000001580a3c24fe_1 ... (0s) Current status: DONE   Reading local directories
+Synchronizing folders
+Reading remote server file list
+Detecting changes from last sync
+Synchronizing files
+sync "./cityManagerReports/Refunds/Oct/Nitin_Jain.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/Nikita_Karira.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/Ajay_Singh_Chandigarh.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/Ajay_Singh.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/Abhishek_Bose.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/Fawad_Haider.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/Karthick_Sunderasan.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/Paily_Chiranjeevi.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/New_Cities.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/Jasdeep_Rajpal.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/unallocated.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/Saurabh_Malhotra.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/Saumya_Kumar.csv" changed in local. uploading
+sync "./cityManagerReports/Refunds/Oct/Rutvij_Oza.csv" changed in local. uploading
+Finished!
