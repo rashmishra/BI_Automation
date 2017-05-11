@@ -6,16 +6,16 @@ if [[ v_table_data_date -eq "" ]];
       else echo "Date provided" ; 
 fi
 
-v_dataset_name=nb_reports;
+v_dataset_name=bi;
 date
 
 
 
 # scheduling_redemption loading. Replace existing
-v_query_redemption="select * from BI_Automation.sales_rep_mapping"
+v_query_redemption="select * from BI_Automation.travel_deals_region"
 ##echo -e "Query: \n $v_query_CM_table_yesterday";
 
-tableName=sales_rep_mapping
+tableName=travel_category1
 v_destination_tbl="$v_dataset_name.${tableName}";
 echo "bq query --maximum_billing_tier 100 --allow_large_results=1  --replace -n 1 --destination_table=$v_destination_tbl \"$v_query_redemption\""
 bq query --maximum_billing_tier 100 --allow_large_results=1 --replace -n 0 --destination_table=$v_destination_tbl "$v_query_redemption" &
@@ -38,7 +38,7 @@ if wait $v_BI_sdl_pids;
 else v_table_status="Code failed in one or more table loads" ;
 fi
 
-echo "Table sales_rep table status: $v_table_status `date`" | mail -s "$v_table_status" rashmi.mishra@nearbuy.com 
+echo "travel_category1 table status: $v_table_status `date`" | mail -s "$v_table_status" rashmi.mishra@nearbuy.com 
 
 exit 0
 
