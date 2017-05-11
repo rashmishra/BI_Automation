@@ -28,13 +28,15 @@ deal_owner as SalesRep,
 city_manager as CityManager,
 cm_location as CityName,
 a.deal_id as deal_id,
+c.city_name as deal_city,
+c.state_name as deal_state,
+c.zone as deal_Region,
 a.merchant_Name as merchant_Name, 
 offer_title,
 platform_type ,
 category_id as category,
 b.category as Secondry_category,
 date( date_time_ist ) as Date,
-b.region as Deal_Region,
 case when DAYOFWEEK( date_time_ist )=1 then WEEK(date_time_ist) -1 else WEEK( date_time_ist ) end as week,
 case when 
 DAYOFWEEK( date_time_ist ) = 1 then 'Sunday'
@@ -68,15 +70,18 @@ category_id,
 date_time_ist,
 number_of_vouchers,
 price_after_promo,
-credits_requested,
+credits_requested, merchant_id,
 case when orderline_status in ('Refund','Cancelled') then GR end GR_refunded
 from nb_reports.master_transaction 
 ) a
 left join bi.travel_category1 b on a.deal_id = b.deal_ID
-where
+left join (select  string(merchantid) as merchantid,redemptionAddress.cityTown as city, redemptionAddress.state as state  from Atom.merchant ) m on m.merchantid = a.merchant_id
+left join BI_Automation.city_state_mapping c on c.city_name = m.city
+where 
 city_manager = \"${v_manager_name}\"  and
 month( date_time_ist )=${v_querying_month} and year( date_time_ist )=2017
-group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14" > /home/ubuntu/BI/data/google_drive/cityManagerReports/2017/${v_month_name}/${v_manager_name}.csv
+group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+" > /home/ubuntu/BI/data/google_drive/cityManagerReports/2017/${v_month_name}/${v_manager_name}.csv
 
 
 exit 0
