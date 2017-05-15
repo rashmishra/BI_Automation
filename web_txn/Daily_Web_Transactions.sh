@@ -6,7 +6,7 @@ export TZ=Asia/Calcutta
 
 # v_month_name=`date +%b`;
 v_month_name=`date -d " -1 day" +%b`;
-# v_month_number=`date +%m`;
+v_month_number=`date +%m`;
 v_querying_month=`date -d " -1 day" +%m`;
 v_querying_year=`date -d " -1 day" +%Y`;
 v_manager_name=$1;
