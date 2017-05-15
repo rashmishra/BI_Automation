@@ -6,20 +6,23 @@ export TZ=Asia/Calcutta
 
 # v_month_name=`date +%b`;
 v_month_name=`date -d " -1 day" +%b`;
-v_month_number=`date +%m`;
+# v_month_number=`date +%m`;
 v_querying_month=`date -d " -1 day" +%m`;
+v_querying_year=`date -d " -1 day" +%Y`;
 v_manager_name=$1;
+
+v_grive_folder="/home/ubuntu/BI/data/google_drive/Daily_Web_Transactions"
 
 echo "${v_manager_name} it the Daily_Web_Transactions";
 echo "${v_month_name} is the Month Name, used in Folder's name";
-echo "${v_month_number} is the Month Number, used in the query";
+echo "${v_querying_month} is the Month Number, used in the query";
 
 
-if [ ! -d "/home/ubuntu/BI/data/google_drive/Daily_Web_Transactions/${v_month_name}/" ]; then
+if [ ! -d "${v_grive_folder}/${v_month_name}/" ]; then
   # Control will enter here if $DIRECTORY doesn't exist.
-  mkdir /home/ubuntu/BI/data/google_drive/Daily_Web_Transactions/${v_month_name}/ ;
-  chmod 0777 /home/ubuntu/BI/data/google_drive/Daily_Web_Transactions/${v_month_name} ;
-else echo "Directory for the month exists.";
+  mkdir ${v_grive_folder}/${v_month_name}/ ;
+  chmod 0777 ${v_grive_folder}/${v_month_name} ;
+else echo `date` " Directory for the month ${v_month_name} exists.";
 fi
 
 
@@ -54,8 +57,8 @@ ON
   T.orderid = oh.orderid
 WHERE
   oh.ispaid = 't'
-  AND month(MSEC_TO_TIMESTAMP(oh.createdat+19800000)) = 04
-  AND year(MSEC_TO_TIMESTAMP(oh.createdat+19800000)) = 2017
+  AND month(MSEC_TO_TIMESTAMP(oh.createdat+19800000)) = ${v_querying_month}
+  AND year(MSEC_TO_TIMESTAMP(oh.createdat+19800000)) = ${v_querying_year}
   AND source IN ('web',
     'mobile-web')
 GROUP BY
@@ -68,8 +71,7 @@ GROUP BY
   source,
   t.transactiontype
   
-order by createdat desc" > /home/ubuntu/BI/data/google_drive/Daily_Web_Transactions/${v_month_name}/${v_manager_name}.csv
-
+order by createdat desc" > ${v_grive_folder}/${v_month_name}/${v_manager_name}.csv
 
 exit 0
 
