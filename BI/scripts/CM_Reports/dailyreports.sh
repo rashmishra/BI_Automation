@@ -9,16 +9,20 @@ v_month_number=`date +%m`;
 v_querying_month=`date -d " -1 day" +%m`;
 v_manager_name=$1;
 
+v_year=`date -d " -1 day" +%Y`
+
+v_grive_folder="/home/ubuntu/BI_automation/BI/data/google_drive/cityManagerReports"
+
 echo "${v_manager_name} it the City Manager";
 echo "${v_month_name} is the Month Name, used in Folder's name";
 echo "${v_month_number} is the Month Number, used in the query";
 
 
-if [ ! -d "/home/ubuntu/BI/data/google_drive/cityManagerReports/2017/${v_month_name}/" ]; then
+if [ ! -d "${v_grive_folder}/${v_year}/${v_month_name}/" ]; then
   # Control will enter here if $DIRECTORY doesn't exist.
-  mkdir /home/ubuntu/BI/data/google_drive/cityManagerReports/2017/${v_month_name}/ ;
-  chmod 0777 /home/ubuntu/BI/data/google_drive/cityManagerReports/2017/${v_month_name} ;
-else echo "Directory for the month exists.";
+  mkdir "${v_grive_folder}/${v_year}/${v_month_name}/" ;
+  chmod 0777 "${v_grive_folder}/${v_year}/${v_month_name}" ;
+else echo `date` " Directory for the month ${v_month_name} exists.";
 fi
 
 
@@ -81,7 +85,7 @@ where
 city_manager = \"${v_manager_name}\"  and
 month( date_time_ist )=${v_querying_month} and year( date_time_ist )=2017
 group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
-" > /home/ubuntu/BI/data/google_drive/cityManagerReports/2017/${v_month_name}/${v_manager_name}.csv
+" > ${v_grive_folder}/${v_year}/${v_month_name}/${v_manager_name}.csv
 
 
 exit 0
