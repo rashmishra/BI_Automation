@@ -79,7 +79,8 @@ case when orderline_status in ('Refund','Cancelled') then GR end GR_refunded
 from nb_reports.master_transaction 
 ) a
 left join bi.travel_category1 b on a.deal_id = b.deal_ID
-left join (select  string(merchantid) as merchantid,redemptionAddress.cityTown as city, redemptionAddress.state as state  from Atom.merchant ) m on m.merchantid = a.merchant_id
+left join (select  string(merchantid) as merchantid,redemptionAddress.cityTown as city, redemptionAddress.state as state  from Atom.merchant WHERE isPublished = true
+          GROUP BY 1, 3, 2) m on m.merchantid = a.merchant_id
 left join BI_Automation.city_state_mapping c on c.city_name = m.city
 where 
 city_manager = \"${v_manager_name}\"  and
