@@ -5,12 +5,18 @@ export TZ=Asia/Calcutta
 MNTH=$(date +%m)
 echo $MNTH
 
+
+
+v_grive_folder="/home/ubuntu/BI_automation/BI/data/google_drive"
+v_scripts_home="/home/ubuntu/BI_automation/merchant_live"
+
+
 while read line
 do
-cd /home/ubuntu/BI_automation/merchant_live
+cd ${v_scripts_home}/
 ./merchant_live.sh $line 10
-done < /home/ubuntu/BI_automation/merchant_live/merchant.csv
-cd /home/ubuntu/BI/data/google_drive
+done < ${v_scripts_home}/merchant.csv
+cd ${v_grive_folder}
 grive
 
 echo "Guys,

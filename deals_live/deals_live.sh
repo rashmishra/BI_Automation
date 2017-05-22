@@ -9,6 +9,8 @@ echo $MONTH_NAME
 echo $1
 echo $2
 
+v_grive_folder="/home/ubuntu/BI_automation/BI/data/google_drive/deals_live"
+
 bq --format=csv query --n=10000000 "select  dealId, m.merchant_name, m.deal_owner, s.manager, min(date) as deal_live_in_this_month_since,deal_end_date, category
 from
 (SELECT
@@ -42,7 +44,8 @@ GROUP BY
   m.deal_owner,
   s.manager,
   category)
-  group by 1,2,3,4,6,7" > /home/ubuntu/BI/data/google_drive/deals_live/deals_live.csv
+  group by 1,2,3,4,6,7" > ${v_grive_folder}/deals_live.csv
+  # /home/ubuntu/BI/data/google_drive/deals_live/deals_live.csv
 
 exit 0
 

@@ -9,6 +9,8 @@ echo $MONTH_NAME
 echo $1
 echo $2
 
+v_grive_folder="/home/ubuntu/BI_automation/BI/data/google_drive/merchant_live"
+
 bq --format=csv query --n=10000000 "select 
 a.merchantid,
 a.name,
@@ -50,7 +52,7 @@ left join Atom_simplified.mapping_deal mpd on mpd.mapd_deal_id =_id
 where units.dval.dFrmDt  is not null and units.dval.dToDt is not null
 and INTEGER(left(STRING(now()),13)) between units.dval.dFrmDt  and units.dval.dToDt) b on b.merchantid = a.merchantid
   
-  group by 
+  GROUP BY 
   a.merchantid,
 a.name,
 AddLine1,
@@ -63,7 +65,7 @@ Mall,
 Market,
 Street,
 a.Category,
-isDealCurrentlyLive" > /home/ubuntu/BI/data/google_drive/merchant_live/merchant_live.csv
+isDealCurrentlyLive" > ${v_grive_folder}/merchant_live.csv
 
 exit 0
 

@@ -78,13 +78,19 @@ credits_requested, merchant_id,
 case when orderline_status in ('Refund','Cancelled') then GR end GR_refunded
 from nb_reports.master_transaction 
 ) a
-left join bi.travel_category1 b on a.deal_id = b.deal_ID
-left join (select  string(merchantid) as merchantid,redemptionAddress.cityTown as city, redemptionAddress.state as state  from Atom.merchant ) m on m.merchantid = a.merchant_id
-left join BI_Automation.city_state_mapping c on c.city_name = m.city
-where 
-city_manager = \"${v_manager_name}\"  and
-month( date_time_ist )=${v_querying_month} and year( date_time_ist )=2017
-group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+LEFT JOIN bi.travel_category1 b on a.deal_id = b.deal_ID
+LEFT JOIN (SELECT  string(merchantid) as merchantid
+                   ,redemptionAddress.cityTown as city
+                   , redemptionAddress.state as state
+          FROM Atom.merchant 
+          WHERE isPublished = true
+          GROUP BY 1, 3, 2
+          ) m on m.merchantid = a.merchant_id
+LEFT JOIN BI_Automation.city_state_mapping c on c.city_name = m.city
+WHERE city_manager = \"${v_manager_name}\"  
+  AND MONTH( date_time_ist )=${v_querying_month} 
+  AND YEAR(date_time_ist)= ${v_year}
+GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
 " > ${v_grive_folder}/${v_year}/${v_month_name}/${v_manager_name}.csv
 
 
