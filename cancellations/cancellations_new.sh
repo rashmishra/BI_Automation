@@ -15,7 +15,7 @@ echo "${v_manager_name} it the Cancellations";
 echo "${v_month_name} is the Month Name, used in Folder's name";
 echo "${v_month_number} is the Month Number, used in the query";
 
-v_grive_folder="/home/ubuntu/BI/data/google_drive/Cancellations/${v_querying_year}/${v_month_name}"
+v_grive_folder="/home/ubuntu/BI_automation/BI/data/google_drive/Cancellations/${v_querying_year}/${v_month_name}"
 
 
 if [ ! -d "${v_grive_folder}/" ]; then
