@@ -9,6 +9,10 @@ echo $MONTH_NAME
 echo $1
 echo $2
 
+
+v_grive_folder="/home/ubuntu/BI_automation/BI/data/google_drive/Customer"
+
+
 bq --format=csv query --n=10000000 "SELECT
   customerId,
   name,
@@ -60,7 +64,8 @@ GROUP BY
   8
 ORDER BY
   1 DESC
-" > /home/ubuntu/BI/data/google_drive/Customer/$1.csv
+" > ${v_grive_folder}/$1.csv
+# /home/ubuntu/BI/data/google_drive/Customer/$1.csv
 
 exit 0
 

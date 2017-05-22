@@ -11,7 +11,7 @@ v_querying_month=`date -d " -1 day" +%m`;
 v_querying_year=`date -d " -1 day" +%Y`;
 v_manager_name=$1;
 
-v_grive_folder="/home/ubuntu/BI/data/google_drive/Daily_Web_Transactions"
+v_grive_folder="/home/ubuntu/BI_automation/BI/data/google_drive/Daily_Web_Transactions"
 
 echo "${v_manager_name} it the Daily_Web_Transactions";
 echo "${v_month_name} is the Month Name, used in Folder's name";
