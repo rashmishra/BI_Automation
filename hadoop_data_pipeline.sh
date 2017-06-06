@@ -46,6 +46,8 @@ v_query_order="SELECT oh.orderid AS orderid,
        offertitle, 
 
        merchantid,
+	
+       b.status as status,
 
        EXACT_COUNT_DISTINCT(b.orderlineid) AS no_of_vouchers
 
@@ -99,7 +101,9 @@ GROUP BY orderid,
 
        offertitle, 
 
-       merchantid
+       merchantid,
+
+       status
           
 "
 ##echo -e "Query: \n $v_query_Master_Transaction table";
