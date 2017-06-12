@@ -1,4 +1,6 @@
 #!/bin/bash
+
+export TZ=Asia/Calcutta
 TASK_START_TIME=`date`
 echo $TASK_START_TIME
 
