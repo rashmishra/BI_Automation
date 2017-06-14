@@ -87,9 +87,9 @@ LEFT JOIN (SELECT  string(merchantid) as merchantid
           GROUP BY 1, 3, 2
           ) m on m.merchantid = a.merchant_id
 LEFT JOIN (select city_name, state_name, zone from BI_Automation.city_state_mapping group by city_name, state_name, zone )c on c.city_name = m.city and c.state_name = m.state
-WHERE city_manager = 'Jaideep_Banerjee'
-  AND MONTH( date_time_ist )= 06
-  AND YEAR(date_time_ist)= 2017
+WHERE city_manager = \"${v_manager_name}\"  
+  AND MONTH( date_time_ist )=${v_querying_month} 
+  AND YEAR(date_time_ist)= ${v_year}
 GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
 " > ${v_grive_folder}/${v_year}/${v_month_name}/${v_manager_name}.csv
 
