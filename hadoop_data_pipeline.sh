@@ -51,9 +51,9 @@ v_query_order="SELECT oh.orderid AS orderid,
 
        EXACT_COUNT_DISTINCT(b.orderlineid) AS no_of_vouchers
 
-FROM   Atom.order_header oh 
+FROM   Atom_rt.order_header oh 
 
-       LEFT JOIN Atom.order_line b 
+       LEFT JOIN Atom_rt.order_line b 
 
               ON oh.orderid = b.orderid 
 
