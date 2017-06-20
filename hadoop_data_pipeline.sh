@@ -49,6 +49,8 @@ v_query_order="SELECT oh.orderid AS orderid,
 	
        b.status as status,
 
+       redemptiondate,
+
        EXACT_COUNT_DISTINCT(b.orderlineid) AS no_of_vouchers
 
 FROM   Atom_rt.order_header oh 
@@ -103,7 +105,9 @@ GROUP BY orderid,
 
        merchantid,
 
-       status
+       status,
+
+       redemptiondate
           
 "
 ##echo -e "Query: \n $v_query_Master_Transaction table";
