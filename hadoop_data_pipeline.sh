@@ -51,6 +51,8 @@ v_query_order="SELECT oh.orderid AS orderid,
 
        redemptiondate,
 
+       b.workflowtype as workflowtype,
+
        EXACT_COUNT_DISTINCT(b.orderlineid) AS no_of_vouchers
 
 FROM   Atom_rt.order_header oh 
@@ -107,7 +109,9 @@ GROUP BY orderid,
 
        status,
 
-       redemptiondate
+       redemptiondate,
+
+       workflowtype
           
 "
 ##echo -e "Query: \n $v_query_Master_Transaction table";
