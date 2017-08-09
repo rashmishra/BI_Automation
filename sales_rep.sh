@@ -12,7 +12,7 @@ date
 
 
 # scheduling_redemption loading. Replace existing
-v_query_redemption="select * from BI_Automation.sales_rep_mapping"
+v_query_redemption="select * from BI_Automation.sales_mapping"
 ##echo -e "Query: \n $v_query_CM_table_yesterday";
 
 tableName=sales_rep_mapping
