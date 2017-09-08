@@ -28,7 +28,14 @@ case when    COALESCE(c.partnerid, oh.partnerid) contains 'x1lLGIjqdR8dUSjqQA22C
   when COALESCE(c.partnerid, oh.partnerid) contains 'EGZicvz68YyiYR9PKsYS4zayzQswpAf6SAhlKKJb'then 'MySmartPrice'
   when COALESCE(c.partnerid, oh.partnerid) contains 'dFHE046zqimzEpaez6aC3iGMR7BpePTRxH6rQ620' then 'AdvantageClub'
   when COALESCE(c.partnerid, oh.partnerid) contains 'gO4YUdmwEy2leBKdNgPFm85ytkUhrUo0awy28VkU' then 'HDFC'
-  END AS Partner_Type,
+  when COALESCE(c.partnerid, oh.partnerid) contains 'pKhutNm2Cxdt928bsFgk5Jp64007RQw43Afd5SN7' then 'Niki.ai'
+  when COALESCE(c.partnerid, oh.partnerid) contains 'LEA3TFkirZ4p4koTCqjdc5dzGuoqY19nRMct8Z17'then 'InOne App'
+  when COALESCE(c.partnerid, oh.partnerid) contains 'LHDSDOpacU1o4YDfaFDUm7NnqUS6929d5BDYOxFQ' then 'Biz Sciences'
+  when COALESCE(c.partnerid, oh.partnerid) contains 'dta2h1qgWcuskcvGlnsz1ffjYDPb3v47fQiYNp2j' then 'Samsung'
+    when COALESCE(c.partnerid, oh.partnerid) contains 'iqrp1SOi34s186x6eSdP2P93p3Er2Ne7om6EbNv1'then 'Vuliv'
+  when COALESCE(c.partnerid, oh.partnerid) contains 'kyy0ZYV8SKadGMqtrE2QU7RMljHFD7tk3IxkB3hS' then 'Haptik'
+  when COALESCE(c.partnerid, oh.partnerid) contains 'QXu1Wu5eCb3cmshK2YrBV3drRdWRyAao8oa3a6eE' then 'Daily Hunt'
+  END AS Partner_Type
 
 
 from
@@ -56,7 +63,9 @@ from Atom.customer
 )
 c on c.customerid = mt.customer_id
 
-)"
+)
+
+"
 ##echo -e "Query: \n $v_query_CM_table_yesterday";
 
 tableName=partner_platform
