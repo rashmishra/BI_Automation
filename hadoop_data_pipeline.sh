@@ -46,12 +46,14 @@ v_query_order="SELECT oh.orderid AS orderid,
        offertitle, 
 
        merchantid,
-	
+      
        b.status as status,
 
        redemptiondate,
 
        b.workflowtype as workflowtype,
+       
+       b.redemptionbyrole AS redemptionbyrole,
 
        EXACT_COUNT_DISTINCT(b.orderlineid) AS no_of_vouchers
 
@@ -111,7 +113,9 @@ GROUP BY orderid,
 
        redemptiondate,
 
-       workflowtype
+       workflowtype,
+       
+       redemptionbyrole
           
 "
 ##echo -e "Query: \n $v_query_Master_Transaction table";
