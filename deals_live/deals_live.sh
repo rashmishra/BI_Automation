@@ -11,15 +11,15 @@ echo $2
 
 v_grive_folder="/home/ubuntu/BI_automation/BI/data/google_drive/deals_live"
 
-bq --format=csv query --n=10000000 "select  dealId, m.merchant_name, m.deal_owner, s.manager, min(date) as deal_live_in_this_month_since,deal_end_date, category
+bq --format=csv query --n=10000000 "select  dealId,  merchant_name, sales_rep as sales_rep, business_head, min(date) as deal_live_in_this_month_since,deal_end_date, category
 from
 (SELECT
   y.date AS date,
   y.Deal_ID AS dealId,
   'na' AS counter_value,
-  m.merchant_name,
-  m.deal_owner,
-  s.manager,
+  m.merchant_name as merchant_name ,
+  m.deal_owner as sales_rep ,
+  s.business_head as business_head  ,
   y.Deal_End_Date AS deal_end_date,
   m.deal_category AS category
 FROM
@@ -29,7 +29,7 @@ INNER JOIN
 ON
   m.deal_Id = y.Deal_ID
 LEFT OUTER JOIN
-  bi.sales_rep_mapping1 s
+  [nb_reports.sales_rep_mapping]  s
 ON
   m.deal_owner = s.sales_rep
 WHERE
@@ -40,9 +40,9 @@ GROUP BY
   dealId,
   counter_value,
   deal_end_date,
-  m.merchant_name,
-  m.deal_owner,
-  s.manager,
+  merchant_name,
+  sales_rep,
+  business_head,
   category)
   group by 1,2,3,4,6,7" > ${v_grive_folder}/deals_live.csv
   # /home/ubuntu/BI/data/google_drive/deals_live/deals_live.csv
