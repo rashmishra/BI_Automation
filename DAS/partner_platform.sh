@@ -35,6 +35,7 @@ case when    COALESCE(c.partnerid, oh.partnerid) contains 'x1lLGIjqdR8dUSjqQA22C
     when COALESCE(c.partnerid, oh.partnerid) contains 'iqrp1SOi34s186x6eSdP2P93p3Er2Ne7om6EbNv1'then 'Vuliv'
   when COALESCE(c.partnerid, oh.partnerid) contains 'kyy0ZYV8SKadGMqtrE2QU7RMljHFD7tk3IxkB3hS' then 'Haptik'
   when COALESCE(c.partnerid, oh.partnerid) contains 'QXu1Wu5eCb3cmshK2YrBV3drRdWRyAao8oa3a6eE' then 'Daily Hunt'
+  when COALESCE(c.partnerid, oh.partnerid) contains 'aYskiE1iiG6nR3Ahpp6egGCPg0h3DZc2M70gNnTg' then 'PayTM'
   END AS Partner_Type
 
 

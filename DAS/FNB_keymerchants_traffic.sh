@@ -9,17 +9,37 @@ date
 
 
 # CM_table_yesterday loading. Replace existing
-v_query_FNB_keymerchants_traffic="SELECT  dd_deal_id as Deal_ID, dd_deal_title  as Deal_Title
-       , dd_valid_from as valid_from
-       , dd_made_live_at as Deal_Made_Live_At
-       , dd_valid_till as valid_till
-       , mapd_merchant_id as Merchant_ID
-FROM [Atom_simplified.deal_detail] dd
-INNER JOIN [Atom_simplified.mapping_deal] mapd
-    ON mapd.mapd_deal_id = dd.dd_deal_ID
-WHERE dd_deal_state  = 'live'
-  AND dd_valid_till  IS NOT NULL
-GROUP BY 1, 2, 3, 4, 5, 6"
+v_query_FNB_keymerchants_traffic="select Today_date, Merchant_Name, Deal_ID,City,Zone,Status,
+sum(DD_Views) Deal_Detail_Views,
+sum(Buy_Nows) Buy_Nows, sum(Transactions) Transactions from 
+
+(SELECT Merchant_Name,Deal_ID,City,
+Zone,Status FROM [big-query-1233:DAS.FNB_keymerchants] ) as a
+
+left join 
+
+(select DATE(date) Today_date,
+hits.product.productSKU dealid, 
+sum(case when hits.eCommerceAction.action_type='2' then 1
+else 0 end ) DD_Views,
+sum(case when hits.eCommerceAction.action_type='3' then 1
+else 0 end ) Buy_Nows,
+exact_count_distinct( hits.transaction.transactionId) Transactions
+
+
+FROM
+    TABLE_DATE_RANGE([124486161.ga_sessions_], TIMESTAMP(DATE_ADD(CURRENT_DATE(),-1,'Month')),
+    TIMESTAMP (CURRENT_DATE()))
+    
+  where  hits.product.v2ProductCategory='FNB'
+  group by 1,2) as b
+  
+  on a.Deal_ID=b.dealid
+  
+  group by 1,2,3,4,5,6
+  
+ order by 1 desc
+"
 ##echo -e "Query: \n $v_query_CM_table_yesterday";
 
 tableName=FNB_keymerchants_traffic 
