@@ -16,7 +16,7 @@ v_query_Deal_to_ddv="SELECT
   a.DD AS Deal_Detail,
   b.GB AS GB,
   b.GR AS GR,
- -- a.Buy_Now as Buy_Now,
+  a.Buy_Now as Buy_Now,
   b.Transaction AS Transactions,
   b.number_of_vouchers AS Number_of_vouchers,
   b.cashback_amount as cashback_amount,
@@ -54,10 +54,10 @@ select * from
         WHEN hits.eCommerceAction.action_type='2' THEN 1
         ELSE 0
       END ) DD,
---        SUM(CASE
---         WHEN hits.eCommerceAction.action_type='3' THEN 1
---         ELSE 0
---       END ) Buy_Now,
+        SUM(CASE
+        WHEN hits.eCommerceAction.action_type='3' THEN 1
+         ELSE 0
+       END ) Buy_Now,
 
   FROM
     TABLE_DATE_RANGE([124486161.ga_sessions_], TIMESTAMP(DATE_ADD(CURRENT_DATE(),-6,'Month')), TIMESTAMP (CURRENT_DATE()))
