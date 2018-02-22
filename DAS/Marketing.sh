@@ -9,20 +9,29 @@ date
 
 
 # CM_table_yesterday loading. Replace existing
-v_query_Deal_to_ddv="
-SELECT
+v_query_Deal_to_ddv="SELECT
   --a. MONTH AS Month,
   a.Date AS Date,
   a.Category AS Category,
   a.DD AS Deal_Detail,
   b.GB AS GB,
   b.GR AS GR,
+  a.Buy_Now as Buy_Now,
   b.Transaction AS Transactions,
   b.number_of_vouchers AS Number_of_vouchers,
-  a.did as device ,
+  b.cashback_amount as cashback_amount,
+  --a.did as device ,
   a.deal_id as deal_id,
+  b.merchant_name as merchant_name ,
+    b.deal_owner as deal_owner ,
+    b.business_head as business_head ,
+    b.a_business_head as a_business_head ,
+   -- b.deal_type as deal_type,
+    b.location as location
   --a.merchant_id as merchant_id
 FROM (
+select * from
+    (
   SELECT
     --MONTH(date) MONTH,
     DATE(date) Date,
@@ -37,7 +46,7 @@ FROM (
       WHEN hits.product.v2ProductCategory IN ('MVE') THEN 'MVE'
       ELSE 'None'
     END Category,
-    hits.sourcePropertyInfo.sourcePropertyDisplayName as did,
+    --hits.sourcePropertyInfo.sourcePropertyDisplayName as did,
     hits.product.productSKU as Deal_Id,
     --case when hits.product.customDimensions.index = 81 then hits.product.customDimensions.value end as merchant_id,
 
@@ -45,13 +54,21 @@ FROM (
         WHEN hits.eCommerceAction.action_type='2' THEN 1
         ELSE 0
       END ) DD,
+        SUM(CASE
+        WHEN hits.eCommerceAction.action_type='3' THEN 1
+         ELSE 0
+       END ) Buy_Now,
 
   FROM
     TABLE_DATE_RANGE([124486161.ga_sessions_], TIMESTAMP(DATE_ADD(CURRENT_DATE(),-6,'Month')), TIMESTAMP (CURRENT_DATE()))
   GROUP BY
     1,
     2,
-    3,4) AS a
+    3)
+    )
+    
+    
+    AS a
 LEFT JOIN (
   SELECT
     --MONTH(date_time_ist) AS MONTH,
@@ -68,26 +85,36 @@ LEFT JOIN (
       ELSE 'None'
     END Category,
     deal_id as deal_id ,
+    merchant_name as merchant_name ,
+    deal_owner ,
+    business_head ,
+    a_business_head ,
+    --deal_type,
+    cm_location  as location,
    -- merchant_id as merchant_id ,
     SUM(GB) AS GB,
     SUM(GR) AS GR,
-    SUM(cashback_amount) AS cashback_amount,
+    ifnull(SUM(cashback_amount),0) AS cashback_amount,
     EXACT_COUNT_DISTINCT(order_id) AS Transaction,
     SUM(number_of_vouchers) AS number_of_vouchers,
+    
    
   FROM
-    [big-query-1233:nb_reports.master_transaction]
+    [big-query-1233:nb_reports.master_transaction] 
   WHERE
     GB > 0
     AND deal_id NOT IN ('14324')
+    --and month(date_time_ist) >= month(DATE_ADD(CURRENT_DATE(),-6,'Month'))
   GROUP BY
     1,
     2,
-    3) AS b
+    3,4,5,6,7,8) AS b
 ON
   a.date =b.date
   and a.Deal_Id = b.Deal_Id
   AND a.Category = b.Category
+ 
+  --where a.deal_id in (select string(Deal_ID) as deal_id  from [DTR_2017.Offers_live]  group by 1)
  -- and a.merchant_id = b.merchant_id"
 ##echo -e "Query: \n $v_query_CM_table_yesterday";
 
