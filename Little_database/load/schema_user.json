@@ -1,0 +1,282 @@
+[	
+	{ 
+		"name": "phone", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "referrer", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "confirmed", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "name", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 	
+		"name": "pic_url", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "gender", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "email", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "otp", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "app_version", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{	
+		"name": "os_version", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "device_brand", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "device_model", 
+		"type": "FLOAT", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "device_id", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "location_0", 
+		"type": "FLOAT", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "location_1", 
+		"type": "FLOAT", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "platform", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "last_purchase_date", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "ltv", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "rltv", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "total_number_of_purchases", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "user_utm_source", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "user_utm_meduim", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "user_utm_campaign", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "cost_of_acquisition", 
+		"type": "FLOAT", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "other_phones", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "other_devices", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "saved", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "avg_discount_used", 
+		"type": "FLOAT", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "avg_sp", 
+		"type": "FLOAT", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "self_fb_id", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "self_fb_access_token", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "corporate", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "user_subscribe_email", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "user_subscribe_sms", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "user_subscribe_notification", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "refund_pct", 
+		"type": "FLOAT", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "total_discount_pct",
+		"type": "FLOAT", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "created_at", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "updated_at", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "locality", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "city", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "state", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "zip", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "created_at1", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "updated_at1", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "locality1", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "city1", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "state1", 
+		"type": "STRING", 
+		"mode": "NULLABLE"
+	},
+	{ 	
+		"name": "zip1", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "_id", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "created_at2", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "updated_at2", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "created_by", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "updated_by", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "record_deleted", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	},
+	{ 
+		"name": "record_closed", 
+		"type": "INTEGER", 
+		"mode": "NULLABLE"
+	}
+]
