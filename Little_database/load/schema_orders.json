@@ -1,0 +1,507 @@
+[
+    {
+        "name": "phone",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "merchant_code",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "order_code",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "quantity",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    
+    },
+    {
+        "name": "mrp",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "absolute_discount",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "pct_discount",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "pct_commission",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "selling_price",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "collectable_amount",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+        
+    },
+    {
+        "name": "absolute_commission",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "order_status",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "payment_type_code",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "order_utm_source",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "order_utm_meduim",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "order_utm_campaign",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "redeemed_date",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+   {
+        "name": "alternate_order_code",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "is_server_updated",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "order_rating",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "refund_created_at",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "refunded_by",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "deal_code",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "parent_deal_code",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "location_0",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "location_1",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "platform",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "device_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "order_contact_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "order_contact_phone",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "order_coupon_code",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "order_coupon_amount",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "merchant_order_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+                "name": "parent_merchant_code",
+                "type": "STRING",
+                "mode": "NULLABLE"
+    },
+    {
+        "name": "nvy_pct_discount",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "nvy_absolute_discount",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "epoch_deal_start_date",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+
+    {
+        "name": "epoch_deal_end_date",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "cashback_amount",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "nvy_amt_collect_type",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+
+    {
+        "name": "order_completed_time",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "payment_utr",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "giftee_phone",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "giftee_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "giftee_comments",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+
+    {
+        "name": "preferred_date_1",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "preferred_time_1",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "preferred_date_2",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "preferred_time_2",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "merchant_amount_due",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "merchant_amount_paid",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "merchant_service_tax",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "merchant_utr",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "merchant_paid_date",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "order_contact_email",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "redeemed_merchant_code",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "coins",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "created_at",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "updated_at",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "locality",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "city",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "state",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "zip",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "created_at1",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "updated_at1",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    
+    {
+        "name": "locality1",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "city1",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "state1",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "zip1",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "created_at2",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "updated_at2",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "created_by",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "record_deleted",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "record_closed",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "paytm_transaction_id1",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+
+
+    {
+        "name": "paytm_transaction_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "default_tag",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "merchant_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "merchant_city",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "merchant_state",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "merchant_phone",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "merchant_email",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "merchant_contact_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "outlet_phone",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "outlet_email",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "outlet_contact_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "referrer",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+
+    {
+        "name": "customer_emails",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+
+    {
+        "name": "customer_other_phones",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    }
+
+]
