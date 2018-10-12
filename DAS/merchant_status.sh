@@ -148,7 +148,7 @@ wait $v_first_pid;
 
 
 # reengagement loading. Replace existing
-v_query_madelive_firsttime=" select  
+v_query_madelive_firsttime="select  
  DATE(DATE_ADD(CURRENT_DATE(), -1, 'DAY')) as Date,
  Merchant_ID , 
  --Deal_ID ,

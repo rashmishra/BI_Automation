@@ -20,6 +20,7 @@ v_query_Deal_to_ddv="SELECT
   b.Transaction AS Transactions,
   b.number_of_vouchers AS Number_of_vouchers,
   b.cashback_amount as cashback_amount,
+  a.platform as platform,
   --a.did as device ,
   a.deal_id as deal_id,
   b.merchant_name as merchant_name ,
@@ -46,7 +47,11 @@ select * from
       WHEN hits.product.v2ProductCategory IN ('MVE') THEN 'MVE'
       ELSE 'None'
     END Category,
-    --hits.sourcePropertyInfo.sourcePropertyDisplayName as did,
+    case when  hits.sourcePropertyInfo.sourcePropertyDisplayName = 'nearbuy android' then 'android'
+    when hits.sourcePropertyInfo.sourcePropertyDisplayName = 'nearbuy ios' then 'ios'
+     when hits.sourcePropertyInfo.sourcePropertyDisplayName = 'mweb' then 'mweb'
+     when hits.sourcePropertyInfo.sourcePropertyDisplayName  = 'nearbuy web' then 'Web'
+     end Platform,
     hits.product.productSKU as Deal_Id,
     --case when hits.product.customDimensions.index = 81 then hits.product.customDimensions.value end as merchant_id,
 
@@ -64,7 +69,7 @@ select * from
   GROUP BY
     1,
     2,
-    3)
+    3,4)
     )
     
     
@@ -89,6 +94,11 @@ LEFT JOIN (
     deal_owner ,
     business_head ,
     a_business_head ,
+    case when platform_type = 'app_android' then 'android'
+    when platform_type = 'app_ios' then 'ios'
+     when platform_type in ('sbi-mobile-web','partnerplatform','sbi-mobile-web','mobile','mobile-web','shopclues-mobile-web') then 'mweb'
+     else 'Web'
+     end Platform,
     --deal_type,
     cm_location  as location,
    -- merchant_id as merchant_id ,
@@ -108,14 +118,12 @@ LEFT JOIN (
   GROUP BY
     1,
     2,
-    3,4,5,6,7,8) AS b
+    3,4,5,6,7,8,9) AS b
 ON
   a.date =b.date
   and a.Deal_Id = b.Deal_Id
   AND a.Category = b.Category
- 
-  --where a.deal_id in (select string(Deal_ID) as deal_id  from [DTR_2017.Offers_live]  group by 1)
- -- and a.merchant_id = b.merchant_id"
+  and a.platform = b.platform"
 ##echo -e "Query: \n $v_query_CM_table_yesterday";
 
 tableName=Deal_to_ddv 
